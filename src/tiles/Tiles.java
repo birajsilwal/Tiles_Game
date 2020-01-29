@@ -7,7 +7,6 @@ import javafx.scene.shape.Rectangle;
 public class Tiles extends StackPane{
     Rectangle rec = new Rectangle(100,100);
 
-
     public Tiles(){
 
     }
