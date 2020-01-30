@@ -10,13 +10,11 @@ import java.util.List;
 
 public class Board{
 
-    private int row = 5;
-    private int column = 5;
+    private int row = 6;
+    private int column = 6;
     private int scale = 2;
     private int totalTiles = row  * column;
     private Tiles[][] tiles;
-//    Tiles tiles = new Tiles();
-
 
     List<Tiles> listOfTiles = new ArrayList<>();
 
@@ -28,7 +26,7 @@ public class Board{
             listOfTiles.add(new Tiles());
         }
 
-        root.setPrefSize(600,600);
+        root.setPrefSize(650,650);
 
         tiles = new Tiles[row][column];
         for (int i = 0; i < row; i++){
