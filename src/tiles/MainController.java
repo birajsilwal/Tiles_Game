@@ -9,10 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
@@ -42,18 +39,20 @@ public class MainController extends Application {
         circle.setFill(Color.DARKSLATEBLUE);
         circle.setStroke(Color.BLACK);
 
-        StackPane stackPane = new StackPane();
-        stackPane.getChildren().addAll(rectangle, rectangle1, circle);
 
-//        flowPane.getChildren().add(rectangle);
+        Rectangle tiles = new Tiles().getTile();
+
 
         for (int i = 1; i < 25; i++) {
 //            gridPane.getChildren().add(stackPane);
-            flowPane.getChildren().add(rectangle);
+            flowPane.getChildren().addAll(new Tiles().getTile(), new Tiles().getTile1());
 
         }
+            StackPane stackPane = new StackPane();
+            stackPane.getChildren().addAll(rectangle, rectangle1, circle);
 
         Scene scene = new Scene(flowPane, 550, 550);
+
 
         stage.setTitle("FlowPane");
         stage.setScene(scene);

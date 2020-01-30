@@ -2,10 +2,13 @@ package tiles;
 
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 public class Tiles extends Canvas {
+    StackPane stackPane = new StackPane();
+
     private GraphicsContext graphicsContext;
     int width;
     int height;
@@ -13,6 +16,7 @@ public class Tiles extends Canvas {
     public Tiles(int width, int height) {
         this.width = width;
         this.height = height;
+
     }
 
     Rectangle rec = new Rectangle(100, 100);
@@ -24,7 +28,8 @@ public class Tiles extends Canvas {
 
     public Rectangle getTile(){
         rec.setFill(Color.RED);
-//        setProperty();
+        rec1.setFill(Color.GREEN);
+        setProperty();
         return rec;
     }
 
@@ -33,9 +38,10 @@ public class Tiles extends Canvas {
         return rec1;
     }
 
-//    void setProperty(){
-//
-//    }
+    void setProperty(){
+
+
+    }
 
 //    public void drawTiles(){
 //
