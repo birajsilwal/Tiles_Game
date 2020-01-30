@@ -1,6 +1,8 @@
 package tiles;
 
 import javafx.scene.Parent;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 
 import java.util.ArrayList;
@@ -8,16 +10,17 @@ import java.util.List;
 
 public class Board{
 
-    private int row;
-    private int column;
-    private int scale = 100;
+    private int row = 5;
+    private int column = 5;
+    private int scale = 2;
     private int totalTiles = row  * column;
+    private Tiles[][] tiles;
+//    Tiles tiles = new Tiles();
+
 
     List<Tiles> listOfTiles = new ArrayList<>();
 
-
-
-    private Pane root = new Pane();
+    private FlowPane root = new FlowPane();
 
     public void createPane(){
 
@@ -27,20 +30,16 @@ public class Board{
 
         root.setPrefSize(600,600);
 
-        for (int i = 0; i < totalTiles; i++) {
-            Tiles tiles = listOfTiles.get(i);
-            tiles.setTranslateX(scale * row);
-            tiles.setTranslateY(scale * column);
-
+        tiles = new Tiles[row][column];
+        for (int i = 0; i < row; i++){
+            for (int j = 0; j < column; j++){
+                tiles[i][j] = new Tiles();
+                root.getChildren().add(tiles[i][j]);
+            }
         }
-        root.getChildren().add(tiles);
     }
 
     public Parent getRoot(){
         return root;
     }
-
-
-    Tiles tiles = new Tiles();
-
 }

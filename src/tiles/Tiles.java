@@ -8,14 +8,14 @@ public class Tiles extends StackPane {
 
     Rectangle rectangle = new Rectangle(100, 100);
 
-
     Rectangle rectangle1 = new Rectangle(100, 100);
-    Rectangle rectangle2 = new Rectangle(70, 70);
+    Rectangle rectangle2 = new Rectangle(65, 65);
     Rectangle rectangle3 = new Rectangle(30, 30);
 
     public Tiles() {
         rectangle.setFill(null);
         rectangle.setStroke(Color.BLACK);
+        rectangle.setStrokeWidth(2);
 
         rectangle1.setFill(Color.RED);
         rectangle2.setFill(Color.GREEN);
