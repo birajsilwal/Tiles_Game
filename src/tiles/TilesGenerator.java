@@ -8,4 +8,6 @@ public class TilesGenerator extends Canvas {
         this.setWidth(500);
     }
 
+
+
 }
