@@ -1,12 +1,13 @@
 package tiles;
+import java.util.ArrayList;
+import java.util.List;
 
-import javafx.event.EventHandler;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
+import static tiles.Constants.*;
+
 
 public class Tiles  {
+
+
 
 
 }

@@ -9,36 +9,30 @@ import javafx.scene.paint.Color;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Board{
+import static tiles.Constants.*;
 
-    private int row = 6;
-    private int column = 6;
-    private int scale = 2;
-    private int totalTiles = row  * column;
-    private DisplayTiles[][] displayTiles;
+public class Board{
 
     private FlowPane root = new FlowPane();
     List<Tiles> listOfTiles = new ArrayList<>();
+    private DisplayTiles[][] displayTiles;
 
     public void createPane(){
 
-        root.setPrefSize(650,650);
+        root.setPrefSize(windowWidth, windowHeight);
 
         for (int i = 0; i < totalTiles; i++){
             listOfTiles.add(new Tiles());
         }
 
-        displayTiles = new DisplayTiles[row][column];
+        displayTiles = new DisplayTiles[ROW][COLUMN];
 
-        for (int i = 0; i < row; i++){
-            for (int j = 0; j < column; j++){
+        for (int i = 0; i < ROW; i++){
+            for (int j = 0; j < ROW; j++){
                 displayTiles[i][j] = new DisplayTiles();
                 root.getChildren().add(displayTiles[i][j]);
             }
         }
-
-
-
     }
 
     public Parent getRoot(){
