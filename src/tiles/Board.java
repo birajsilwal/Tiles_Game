@@ -1,7 +1,11 @@
 package tiles;
 
+import javafx.event.EventHandler;
 import javafx.scene.Parent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.paint.Color;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +15,7 @@ public class Board{
     private int column = 6;
     private int scale = 2;
     private int totalTiles = row  * column;
-    private Tiles[][] tiles;
+    private DisplayTiles[][] displayTiles;
 
     private FlowPane root = new FlowPane();
     List<Tiles> listOfTiles = new ArrayList<>();
@@ -24,16 +28,22 @@ public class Board{
             listOfTiles.add(new Tiles());
         }
 
-        tiles = new Tiles[row][column];
+        displayTiles = new DisplayTiles[row][column];
+
         for (int i = 0; i < row; i++){
             for (int j = 0; j < column; j++){
-                tiles[i][j] = new Tiles();
-                root.getChildren().add(tiles[i][j]);
+                displayTiles[i][j] = new DisplayTiles();
+                root.getChildren().add(displayTiles[i][j]);
             }
         }
+
+
+
     }
 
     public Parent getRoot(){
         return root;
     }
+
+
 }

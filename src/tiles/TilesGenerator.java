@@ -42,7 +42,7 @@ public class TilesGenerator extends Canvas {
             case 0:
                 return Color.BLACK;
             case 1:
-                return Color.BROWN;
+                return Color.CADETBLUE;
         }
         return Color.BLACK;
     }
