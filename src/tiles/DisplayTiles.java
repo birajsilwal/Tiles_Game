@@ -43,14 +43,36 @@ public class DisplayTiles extends StackPane {
 
         /* this event removes the matched tile, if any */
         this.setOnMouseClicked(event -> {
-            System.out.println("in");
+
             int xCord = (int) event.getX();
             int yCord = (int) event.getY();
             System.out.println("X: " + xCord + ", Y: " + yCord);
             displayTiles.add(me);
-            System.out.println(displayTiles.size());;
-            for (int i = 0; i < list.size(); i++) {
-                System.out.println(list.get(i));
+            System.out.println(displayTiles.size());
+
+            if (displayTiles.size() == 2) {
+
+                DisplayTiles t1 = displayTiles.remove(0);
+                DisplayTiles t2 = displayTiles.remove(0);
+
+                System.out.println(t1);
+                System.out.println(t2);
+
+                if (t1.largeRectangle.getFill().equals(t2.largeRectangle.getFill())) {
+                        t1.largeRectangle.setVisible(false);
+                        t2.largeRectangle.setVisible(false);
+                }
+
+                if (t1.mediumRectangle.getFill().equals(t2.mediumRectangle.getFill())) {
+                        t1.mediumRectangle.setVisible(false);
+                        t2.mediumRectangle.setVisible(false);
+                }
+
+                if (t1.smallRectangle.getFill().equals(t2.smallRectangle.getFill())) {
+                        t1.smallRectangle.setVisible(false);
+                        t2.smallRectangle.setVisible(false);
+                }
+
             }
         });
     }
