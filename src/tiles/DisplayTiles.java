@@ -37,8 +37,9 @@ public class DisplayTiles extends StackPane {
             int xCord = (int) event.getX();
             int yCord = (int) event.getY();
             System.out.println("X: " + xCord + ", Y: " + yCord);
-            nextTile.add(rectangle);
 
+
+            largeRectangle.setFill(null);
 
 
         });
