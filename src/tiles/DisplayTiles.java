@@ -24,6 +24,10 @@ public class DisplayTiles extends StackPane {
         getChildren().addAll(bigRectangle, mediumRectangle, largeRectangle);
         getChildren().add(rectangle);
 
+        this.setOnMouseClicked(e -> {
+            System.out.println("I was clicked.");
+        });
+
 
     }
 

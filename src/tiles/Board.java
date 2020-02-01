@@ -21,9 +21,9 @@ public class Board{
 
         root.setPrefSize(windowWidth, windowHeight);
 
-        for (int i = 0; i < totalTiles; i++){
+        /*for (int i = 0; i < totalTiles; i++){
             listOfTiles.add(new Tiles());
-        }
+        }*/
 
         displayTiles = new DisplayTiles[ROW][COLUMN];
 

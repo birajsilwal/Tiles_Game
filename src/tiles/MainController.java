@@ -26,7 +26,5 @@ public class MainController extends Application {
         stage.setTitle("FlowPane");
         stage.setScene(new Scene(root));
         stage.show();
-
-
     }
 }

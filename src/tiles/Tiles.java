@@ -7,7 +7,15 @@ import static tiles.Constants.*;
 
 public class Tiles  {
 
+    List<Tiles> listOfTiles = new ArrayList<>();
 
+    public void isMatched() {
+
+    }
+
+    public void removeTile() {
+
+    }
 
 
 }
