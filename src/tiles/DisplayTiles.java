@@ -4,14 +4,9 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class DisplayTiles extends StackPane {
 
-    List<Rectangle> currentTile = new ArrayList<>();
-    List<Rectangle> nextTile = new ArrayList<>();
-
+    public DisplayTiles currentTile = null;
 
     Rectangle rectangle = new Rectangle(100, 100);
 
@@ -32,21 +27,34 @@ public class DisplayTiles extends StackPane {
         getChildren().add(rectangle);
 
 
+        this.setOnMouseEntered(event -> rectangle.setStroke(Color.WHITE));
+        this.setOnMouseExited(event -> rectangle.setStroke(Color.BLACK));
 
         this.setOnMouseClicked(event -> {
             int xCord = (int) event.getX();
             int yCord = (int) event.getY();
             System.out.println("X: " + xCord + ", Y: " + yCord);
 
+            if (currentTile == null) {
+                currentTile = this;
+            }
 
-            largeRectangle.setFill(null);
+            getCurrentTile();
+        });
+    }
 
+    public void getCurrentTile() {
+        this.setOnMouseClicked(event -> {
 
         });
     }
 
-    public void isMatched() {
+    public void getNextTile() {
 
+    }
+
+    public boolean isMatched(DisplayTiles matched) {
+        return true;
     }
 
 }

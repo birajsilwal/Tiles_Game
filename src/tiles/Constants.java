@@ -2,10 +2,10 @@ package tiles;
 
 public interface Constants {
 
-    int ROW = 5;
-    int COLUMN = 5;
+    int ROW = 6;
+    int COLUMN = 6;
     int totalTiles = ROW * COLUMN;
-    int windowWidth = 550;
-    int windowHeight = 600;
+    int windowWidth = 650;
+    int windowHeight = 650;
 
 }
