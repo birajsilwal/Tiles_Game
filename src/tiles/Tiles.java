@@ -4,12 +4,14 @@ package tiles;
 /* This class is created to track down all the tiles in the game */
 public class Tiles  {
 
-    public int[] firstTile;
-    public int[] secondTile;
+    public int[] currentTile;
+    public int[] lastTile;
+    public boolean containsTile;
 
     public Tiles() {
-        firstTile = new int[3];
-        secondTile = new int[3];
+        currentTile = new int[3];
+        lastTile = new int[3];
+        containsTile = true;
     }
 
     /* it removes specific tile from the tiles */
@@ -21,4 +23,27 @@ public class Tiles  {
     public boolean containsTile() {
         return true;
     }
+
+    /* set the current selected tile */
+    public void setCurrentTile(int a, int b) {
+        currentTile[0] = a;
+        currentTile[1] = b;
+        containsTile = true;
+    }
+
+    public void setLastTile(int a, int b) {
+        lastTile[0] = a;
+        lastTile[1] = b;
+        containsTile = true;
+    }
+
+    /* get current tiles */
+    public int[] getCurrentTile() {
+        return currentTile;
+    }
+
+    public int[] getLastTile() {
+        return lastTile;
+    }
+
 }

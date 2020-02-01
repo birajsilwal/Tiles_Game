@@ -17,6 +17,8 @@ public class Board{
 
     private FlowPane root = new FlowPane();
 
+    List<DisplayTiles> oneTile = new ArrayList<>();
+
     public void createPane(){
 
         root.setPrefSize(windowWidth, windowHeight);
@@ -27,7 +29,7 @@ public class Board{
 
         List<DisplayTiles> listOfTiles = new ArrayList<>();
         for (int i = 0; i < totalTiles; i++) {
-            listOfTiles.add(new DisplayTiles());
+            listOfTiles.add(new DisplayTiles(oneTile));
         }
 
         for (int i = 0; i < totalTiles; i++) {
@@ -37,6 +39,22 @@ public class Board{
             root.getChildren().add(displayTiles);
         }
     }
+
+    public void firstSelectedTile() {
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
     public Parent getRoot(){
         return root;
@@ -68,7 +86,6 @@ public class Board{
         exit.setText("Exit");
         exit.setFont(setFontt());
         exit.setOnMouseClicked(event -> {
-//            isClicked();
         });
 
         HBox hBox = new HBox(hBoxButtonSpacing, start, exit);
@@ -81,9 +98,5 @@ public class Board{
     public Font setFontt() {
         return Font.font("Sans", FontWeight.MEDIUM, fontSize);
     }
-
-//    public boolean isClicked() {
-//        return true;
-//    }
 
 }
