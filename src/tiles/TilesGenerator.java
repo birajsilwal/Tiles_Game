@@ -16,6 +16,7 @@ public class TilesGenerator extends Canvas {
         graphicsContext = this.getGraphicsContext2D();
     }
 
+    // this creates three random color for big rectangle
     public static Color getColorBigRectangle(){
         Random random = new Random();
         int rand = random.nextInt(3);
@@ -30,6 +31,8 @@ public class TilesGenerator extends Canvas {
         return Color.BLACK;
     }
 
+    // this creates three random color for medium rectangle
+
     public static Color getColorMediumRectangle() {
         Random random = new Random();
         int rand = random.nextInt(3);
@@ -43,6 +46,8 @@ public class TilesGenerator extends Canvas {
         }
         return Color.BLACK;
     }
+
+    // this creates three random color for small rectangle
 
     public static Color getColorSmallRectangle() {
         Random random = new Random();

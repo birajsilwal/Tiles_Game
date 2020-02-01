@@ -20,10 +20,10 @@ public class MainController extends Application {
     public static void main(String[] args) { launch(args); }
     @Override
     public void start(Stage stage) {
+        stage.setTitle("Tiles Game");
         Board board = new Board();
         board.createPane();
         Parent root = board.getRoot();
-        stage.setTitle("FlowPane");
         stage.setScene(new Scene(root));
         stage.show();
     }

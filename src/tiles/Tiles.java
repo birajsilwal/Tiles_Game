@@ -1,5 +1,7 @@
 package tiles;
 
+
+/* This class is created to track down all the tiles in the game */
 public class Tiles  {
 
     public int[] firstTile;
@@ -10,12 +12,13 @@ public class Tiles  {
         secondTile = new int[3];
     }
 
-    DisplayTiles displayTiles =  new DisplayTiles();
-
-
-    public void isMatched() {
-
+    /* it removes specific tile from the tiles */
+    public void removeTile() {
 
     }
 
+    /* This method checks if there are tiles or not */
+    public boolean containsTile() {
+        return true;
+    }
 }

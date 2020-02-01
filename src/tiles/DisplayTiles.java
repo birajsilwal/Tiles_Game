@@ -6,13 +6,15 @@ import javafx.scene.shape.Rectangle;
 
 public class DisplayTiles extends StackPane {
 
-    public DisplayTiles currentTile = null;
+    private DisplayTiles currentTile = null;
 
     Rectangle rectangle = new Rectangle(100, 100);
-
     Rectangle largeRectangle = new Rectangle(100, 100);
     Rectangle mediumRectangle = new Rectangle(65, 65);
     Rectangle smallRectangle = new Rectangle(30, 30);
+
+    /* this method creates rectangle objects
+       there are three rectangle objects i.e. large, medium, and small */
 
     public DisplayTiles() {
         rectangle.setFill(null);
@@ -27,9 +29,12 @@ public class DisplayTiles extends StackPane {
         getChildren().add(rectangle);
 
 
+        /* when mouse is entered into the tiles it changes stroke color of big tile.
+           when mouse is exited tile, it changes stroke color of big tile back into black */
         this.setOnMouseEntered(event -> rectangle.setStroke(Color.WHITE));
         this.setOnMouseExited(event -> rectangle.setStroke(Color.BLACK));
 
+        /* this event removes the matched tile, if any */
         this.setOnMouseClicked(event -> {
             int xCord = (int) event.getX();
             int yCord = (int) event.getY();
@@ -43,18 +48,20 @@ public class DisplayTiles extends StackPane {
         });
     }
 
-    public void getCurrentTile() {
+    /* This method is created to get the current selected tile */
+    private void getCurrentTile() {
         this.setOnMouseClicked(event -> {
 
         });
     }
 
-    public void getNextTile() {
+    /* This method stores the last clicked tile */
+    private void getLastTile() {
 
     }
 
-    public boolean isMatched(DisplayTiles matched) {
+    /* This boolean method checks if current selected tile is equal to the last tile */
+    private boolean isMatched(DisplayTiles matched) {
         return true;
     }
-
 }
