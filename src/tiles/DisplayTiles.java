@@ -3,6 +3,8 @@ package tiles;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import static tiles.Constants.*;
+
 
 public class DisplayTiles extends StackPane {
 
@@ -24,6 +26,9 @@ public class DisplayTiles extends StackPane {
         largeRectangle.setFill(TilesGenerator.getColorBigRectangle());
         mediumRectangle.setFill(TilesGenerator.getColorMediumRectangle());
         smallRectangle.setFill(TilesGenerator.getColorSmallRectangle());
+
+        mediumRectangle.setRotate(angleForMediumRectangle);
+        smallRectangle.setRotate(angleForSmallRectangle);
 
         getChildren().addAll(largeRectangle, mediumRectangle, smallRectangle);
         getChildren().add(rectangle);

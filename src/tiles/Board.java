@@ -9,7 +9,6 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-
 import java.util.ArrayList;
 import java.util.List;
 import static tiles.Constants.*;
@@ -68,9 +67,12 @@ public class Board{
         Button exit = new Button();
         exit.setText("Exit");
         exit.setFont(setFontt());
+        exit.setOnMouseClicked(event -> {
+//            isClicked();
+        });
 
         HBox hBox = new HBox(hBoxButtonSpacing, start, exit);
-        hBox.setPadding(new Insets(15, 0, 0, 15));
+        hBox.setPadding(new Insets(15, 0, 0, 20));
 
         return hBox;
     }
@@ -80,5 +82,8 @@ public class Board{
         return Font.font("Sans", FontWeight.MEDIUM, fontSize);
     }
 
+//    public boolean isClicked() {
+//        return true;
+//    }
 
 }
