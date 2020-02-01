@@ -24,5 +24,5 @@ This game is based on [NY Times Tiles Game](https://www.nytimes.com/puzzles/tile
 
 ### Screenshot
 
-<img src="Resources/Tiles1.png" width = 300>
+![](Resources/Tiles1.png")
 
