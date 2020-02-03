@@ -1,5 +1,6 @@
 package tiles;
 
+import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -8,14 +9,23 @@ import static tiles.Constants.*;
 
 public class DisplayTiles extends StackPane {
 
-    private DisplayTiles currentTile = null;
+    private int currentCombo;
+
     private List<DisplayTiles> displayTiles;
-    DisplayTiles me = this;
+    DisplayTiles thisTile = this;
 
     Rectangle rectangle = new Rectangle(100, 100);
     Rectangle largeRectangle = new Rectangle(100, 100);
     Rectangle mediumRectangle = new Rectangle(65, 65);
     Rectangle smallRectangle = new Rectangle(30, 30);
+
+    public int  getCurrentCombo() {
+        return currentCombo;
+    }
+
+    public DisplayTiles() {
+
+    }
 
     /* this method creates rectangle objects
        there are three rectangle objects i.e. large, medium, and small */
@@ -23,7 +33,7 @@ public class DisplayTiles extends StackPane {
     public DisplayTiles(List<DisplayTiles> list) {
         this.displayTiles = list;
         rectangle.setFill(null);
-        rectangle.setStroke(Color.BLACK);
+        rectangle.setStroke(Color.WHITE);
         rectangle.setStrokeWidth(2);
 
         largeRectangle.setFill(TilesGenerator.getColorBigRectangle());
@@ -37,43 +47,43 @@ public class DisplayTiles extends StackPane {
         getChildren().add(rectangle);
 
         /* when mouse is entered into the tiles it changes stroke color of big tile.
-           when mouse is exited tile, it changes stroke color of big tile back into black */
-        this.setOnMouseEntered(event -> rectangle.setStroke(Color.WHITE));
-        this.setOnMouseExited(event -> rectangle.setStroke(Color.BLACK));
+           when mouse is exited tile, it changes stroke color of big tile back into original color */
+        this.setOnMouseEntered(event -> rectangle.setStroke(Color.BLACK));
+        this.setOnMouseExited(event -> rectangle.setStroke(Color.WHITE));
 
         /* this event removes the matched tile, if any */
         this.setOnMouseClicked(event -> {
 
-            int xCord = (int) event.getX();
-            int yCord = (int) event.getY();
-            System.out.println("X: " + xCord + ", Y: " + yCord);
-            displayTiles.add(me);
-            System.out.println(displayTiles.size());
+            displayTiles.add(thisTile);
+//            System.out.println(displayTiles.size());
 
             if (displayTiles.size() == 2) {
 
                 DisplayTiles t1 = displayTiles.remove(0);
                 DisplayTiles t2 = displayTiles.remove(0);
 
-                System.out.println(t1);
-                System.out.println(t2);
-
                 if (t1.largeRectangle.getFill().equals(t2.largeRectangle.getFill())) {
-                        t1.largeRectangle.setVisible(false);
-                        t2.largeRectangle.setVisible(false);
+                    t1.largeRectangle.setVisible(false);
+                    t2.largeRectangle.setVisible(false);
+                    currentCombo++;
+//                    System.out.println(currentCombo++);
                 }
 
                 if (t1.mediumRectangle.getFill().equals(t2.mediumRectangle.getFill())) {
                         t1.mediumRectangle.setVisible(false);
                         t2.mediumRectangle.setVisible(false);
+//                        getCurrentCombo();
                 }
 
                 if (t1.smallRectangle.getFill().equals(t2.smallRectangle.getFill())) {
                         t1.smallRectangle.setVisible(false);
                         t2.smallRectangle.setVisible(false);
+//                        getCurrentCombo();
                 }
-
             }
         });
     }
+
 }
+
+

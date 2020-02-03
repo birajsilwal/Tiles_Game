@@ -9,6 +9,8 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 import static tiles.Constants.*;
@@ -17,10 +19,11 @@ public class Board{
 
     private FlowPane root = new FlowPane();
 
+    DisplayTiles displayTiles = new DisplayTiles();
+
     List<DisplayTiles> oneTile = new ArrayList<>();
 
     public void createPane(){
-
         root.setPrefSize(windowWidth, windowHeight);
         root.setPadding(new Insets(20, 20, 0, 20));
 
@@ -40,31 +43,17 @@ public class Board{
         }
     }
 
-    public void firstSelectedTile() {
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
     public Parent getRoot(){
         return root;
     }
 
     /* Created label horizontally for combos and passed to borderPane in MainController */
     public HBox label() {
-        Label currentCombo = new Label("Current Combo: 0");
+        Text currentCombo = new Text("Current Combo: " + displayTiles.getCurrentCombo());
+//        Label currentCombo = new Label("Current Combo: 0");
         currentCombo.setFont(setFontt());
-        currentCombo.setPadding(new Insets(0,0,15, 20));
+//        currentCombo.setPadding(new Insets(0,0,15, 20));
+
 
         Label longestCombo = new Label("Longest Combo: 0");
         longestCombo.setAlignment(Pos.BASELINE_CENTER);

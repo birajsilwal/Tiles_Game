@@ -1,22 +1,13 @@
 package tiles;
 
 import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-
 import java.util.Random;
 
 public class TilesGenerator extends Canvas {
 
-    private GraphicsContext graphicsContext;
-
-    public TilesGenerator() {
-        this.setWidth(100);
-        this.setHeight(100);
-        graphicsContext = this.getGraphicsContext2D();
-    }
-
     // this creates three random color for big rectangle
+
     public static Color getColorBigRectangle(){
         Random random = new Random();
         int rand = random.nextInt(3);

@@ -11,7 +11,7 @@ public class MainController extends Application {
     public static void main(String[] args) { launch(args); }
     @Override
 
-    /* hBox pane is inserted inside BorderPane. BorderPane is inserted inside AnchorPane */
+    /* hBox pane is inserted inside BorderPane, BorderPane is inserted inside AnchorPane */
     public void start(Stage stage) {
         stage.setTitle("Tiles Game");
         Board board = new Board();
