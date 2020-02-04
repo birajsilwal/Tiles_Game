@@ -47,23 +47,7 @@ public class Board{
         return root;
     }
 
-    /* Created label horizontally for combos and passed to borderPane in MainController */
-    public HBox label() {
-        Text currentCombo = new Text("Current Combo: " + displayTiles.getCurrentCombo());
-//        Label currentCombo = new Label("Current Combo: 0");
-        currentCombo.setFont(setFontt());
-//        currentCombo.setPadding(new Insets(0,0,15, 20));
 
-
-        Label longestCombo = new Label("Longest Combo: 0");
-        longestCombo.setAlignment(Pos.BASELINE_CENTER);
-        longestCombo.setFont(setFontt());
-        longestCombo.setPadding(new Insets(0,0,15, 0));
-
-        HBox hBox = new HBox(hBoxLabelSpacing, currentCombo, longestCombo);
-
-        return (hBox) ;
-    }
 
     /* button created horizontally and passes into borderPane in MainController */
     public HBox button() {

@@ -1,15 +1,20 @@
 package tiles;
 
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
+
 import java.util.List;
 import static tiles.Constants.*;
 
 public class DisplayTiles extends StackPane {
 
-    private int currentCombo;
+    private static int currentCombo;
 
     private List<DisplayTiles> displayTiles;
     DisplayTiles thisTile = this;
@@ -66,7 +71,11 @@ public class DisplayTiles extends StackPane {
                     t1.largeRectangle.setVisible(false);
                     t2.largeRectangle.setVisible(false);
                     currentCombo++;
-//                    System.out.println(currentCombo++);
+                    label();
+
+
+//                    currentCombo++;
+//                    System.out.println(currentCombo);
                 }
 
                 if (t1.mediumRectangle.getFill().equals(t2.mediumRectangle.getFill())) {
@@ -82,6 +91,25 @@ public class DisplayTiles extends StackPane {
                 }
             }
         });
+    }
+
+    /* Created label horizontally for combos and passed to borderPane in MainController */
+    public HBox label() {
+        System.out.println(getCurrentCombo());
+        Text currentCombo = new Text("Current Combo: " + getCurrentCombo());
+//        Label currentCombo = new Label("Current Combo: 0");
+        currentCombo.setFont(new Board().setFontt());
+//        currentCombo.setPadding(new Insets(0,0,15, 20));
+
+
+        Label longestCombo = new Label("Longest Combo: 0");
+        longestCombo.setAlignment(Pos.BASELINE_CENTER);
+        longestCombo.setFont(new Board().setFontt());
+        longestCombo.setPadding(new Insets(0,0,15, 0));
+
+        HBox hBox = new HBox(hBoxLabelSpacing, currentCombo, longestCombo);
+
+        return (hBox) ;
     }
 
 }

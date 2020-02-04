@@ -22,7 +22,7 @@ public class MainController extends Application {
         Parent root = board.getRoot();
 
         borderPane.setCenter(root);
-        borderPane.setBottom(new Board().label());
+        borderPane.setBottom(new DisplayTiles().label());
         borderPane.setTop(new Board().button());
         anchorPane.getChildren().add(borderPane);
 

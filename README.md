@@ -20,9 +20,12 @@ This game is based on [NY Times Tiles Game](https://www.nytimes.com/puzzles/tile
 ### Additional Info
 
 * For best UX, please play game with default windows size.
-* Right now there is no implementation for matching two or more tiles yet.
+
+### Bugs
+
+* If you click on the same tile twice it will disappear.
+* Current combo updates in the code but it is not updating in the pane.
 
 ### Screenshot
 
-![](Resources/Tiles1.png")
-
+![](Resources/Tiles1.png)
