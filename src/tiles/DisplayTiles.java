@@ -95,12 +95,12 @@ public class DisplayTiles extends StackPane {
 
     /* Created label horizontally for combos and passed to borderPane in MainController */
     public HBox label() {
-        System.out.println(getCurrentCombo());
+//        System.out.println(getCurrentCombo());
         Text currentCombo = new Text("Current Combo: " + getCurrentCombo());
-//        Label currentCombo = new Label("Current Combo: 0");
-        currentCombo.setFont(new Board().setFontt());
-//        currentCombo.setPadding(new Insets(0,0,15, 20));
+        currentCombo.setText("Current Combo "+ getCurrentCombo());
+        System.out.println(currentCombo);
 
+        currentCombo.setFont(new Board().setFontt());
 
         Label longestCombo = new Label("Longest Combo: 0");
         longestCombo.setAlignment(Pos.BASELINE_CENTER);

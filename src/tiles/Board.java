@@ -21,7 +21,7 @@ public class Board{
 
     DisplayTiles displayTiles = new DisplayTiles();
 
-    List<DisplayTiles> oneTile = new ArrayList<>();
+    private List<DisplayTiles> oneTile = new ArrayList<>();
 
     public void createPane(){
         root.setPrefSize(windowWidth, windowHeight);
